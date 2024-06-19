@@ -5,34 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
 </head>
 <body>
-    <div class="resume">
+    <div class="resume" id="resume">
         <header class="heading1">
             <div>
                 <h1>CHILEKAMPALLI REDDY SEKHAR REDDY</h1>
                 <p>Computer Science Student</p>
-            <p>Email: chilekampalli2004@gmail.com | Phone: 9701511739</p>
-            <p>
-                <a href="https://github.com/Reddy16293">github link</a>
-            </p>
+                <p>Email: chilekampalli2004@gmail.com | Phone: 9701511739</p>
+                <p>
+                    <a href="https://github.com/Reddy16293">github link</a>
+                </p>
             </div>
             <div>
                 <div>
                     <img src="profile-pic.jpg" alt="profile pic" width="200px" height="200px">
                 </div>
-                
             </div>
-            
         </header>
 
         <section class="profile">
             <h2>Profile</h2>
-
-
             <p>
                 Ambitious second-year B.Tech student specializing in Computer Science. Achieved a GPA of 8.21 Proficient in
-                programming languages including  C, C++ and familiar with python  .Seeking internships to apply classroom knowledge to real-world challenges and
+                programming languages including C, C++ and familiar with python. Seeking internships to apply classroom knowledge to real-world challenges and
                 contribute to innovative solutions in the tech industry.
             </p>
         </section>
@@ -41,61 +38,48 @@
             <h2>Education</h2>
             <ul>
                 <li>
-                    <h3>B.Tech,Computer Science</h3>
+                    <h3>B.Tech, Computer Science</h3>
                     <p>NIT Calicut, 2022 - 2026</p>
-                    <p>CGPA :8.21(till now)</p>
+                    <p>CGPA : 8.21 (till now)</p>
                 </li>
                 <li>
                     <h3>12th</h3>
                     <p>Sri Chaitanya Junior College, 2020 - 2022</p>
-                    <p>
-                        Scored 95.6% in the Board Exams
-                    </p>
+                    <p>Scored 95.6% in the Board Exams</p>
                 </li>
                 <li>
-                    <h3>10 th Class</h3>
-                    <p>Dr.KKR's Gowtham High School,2019-2020</p>
-                    <p>
-                        Scored 100% in the Board Exams
-                    </p>
+                    <h3>10th Class</h3>
+                    <p>Dr.KKR's Gowtham High School, 2019-2020</p>
+                    <p>Scored 100% in the Board Exams</p>
                 </li>
             </ul>
         </section>
+
         <section>
-              <h2>Achievments</h2>
-              <ul>
+            <h2>Achievements</h2>
+            <ul>
                 <li>
                     <h3>JEE Mains</h3>
                     <p>Qualified JEE Mains with 99.62 percentile</p>
-                    <p>Rank:<b>3501</b></p>
+                    <p>Rank: <b>3501</b></p>
                     <h3>JEE Advance</h3>
                     <p>Rank: <b>6123</b></p>
                     <h3>COMEDK</h3>
                     <p>Qualified COMEDK with 99.61 percentile</p>
-                    <p>Rank:<b>207</b></p>
-                    <h3>
-                        TSEAMCET
-                    </h3>
-                    <p>secured rank:<b>526</b></p>
-                    <h3>
-                        APEAMCET
-                    </h3>
-                    <p>secured rank <b>976</b></p>
-
+                    <p>Rank: <b>207</b></p>
+                    <h3>TSEAMCET</h3>
+                    <p>secured rank: <b>526</b></p>
+                    <h3>APEAMCET</h3>
+                    <p>secured rank: <b>976</b></p>
                 </li>
-
-
-              </ul>
-
-
+            </ul>
         </section>
-        
 
         <section class="skills">
-            <h2> Technical Skills</h2>
+            <h2>Technical Skills</h2>
             <ul>
-                <li>c</li>
-                <li>c++</li>
+                <li>C</li>
+                <li>C++</li>
                 <li>Python</li>
                 <li>DSA</li>
                 <li>HTML</li>
@@ -103,7 +87,6 @@
                 <li>JavaScript</li>
                 <li>React</li>
                 <li>Git</li>
-            
             </ul>
             <h2>Soft Skills</h2>
             <ul>
@@ -112,9 +95,9 @@
                 <li>Communication</li>
                 <li>Time Management</li>
                 <li>Quick Learner</li>
-
             </ul>
         </section>
+
         <section class="projects">
             <h2>Projects</h2>
             <ul>
@@ -122,22 +105,29 @@
                     <h3>Dice Game</h3>
                     <a href="https://reddy16293.github.io/Dice-Game/" target="_blank">Dice Game</a>
                     <p>Dice Game using DOM with Javascript</p>
-                   
                 </li>
-               
-                
             </ul>
-        <section class="interests">
-           <h2>Interests</h2>
-           <ul>
-            <li>watching movies</li>
-            <li>badminton</li>
-            <li>cricket</li>
-           </ul>
-
-
         </section>
 
+        <section class="interests">
+            <h2>Interests</h2>
+            <ul>
+                <li>Watching movies</li>
+                <li>Badminton</li>
+                <li>Cricket</li>
+            </ul>
+        </section>
     </div>
+
+    <button id="downloadPdf">Download as PDF</button>
+
+    <script>
+    document.getElementById('downloadPdf').addEventListener('click', () => {
+        const element = document.getElementById('resume');
+        html2pdf()
+            .from(element)
+            .save('Resume_Chilekampalli_Reddy_Sekhar_Reddy.pdf');
+    });
+    </script>
 </body>
 </html>
